@@ -1,0 +1,53 @@
+<div class="container">
+  <a [routerLink]="['/']">Regresar</a>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          @if(imagenEnBase64 == ''){
+          <img class="img-fluid" [src]="pelicula?.poster" />
+          }@else {
+          <img class="img-fluid" [src]="imagenEnBase64" />
+          }
+        </div>
+        <div class="col">
+          <form [formGroup]="formGroup" (ngSubmit)="guardar()">
+            <label class="form-label">Título</label>
+            <input class="form-control" formControlName="titulo" />
+
+            <label>Resumen</label>
+            <textarea class="form-control" formControlName="resumen"></textarea>
+
+            <label>Poster</label>
+            <input
+              class="form-control"
+              type="file"
+              formControlName="poster"
+              (change)="visualizarImagen($event)"
+            />
+
+            <label>Trailer</label>
+            <input class="form-control" formControlName="trailer" />
+
+            <!-- <iframe
+              width="560"
+              height="315"
+              src="{{pelicula?.trailer}}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe> -->
+            <input type="submit" class="btn btn-success" value="Guardar" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="./">Regresar</a>
+  <!-- <a href="/">Regresar</a>
+  <a href="">Regresar</a>
+  <a [routerLink]="'/'">Regresar</a> -->
+</div>

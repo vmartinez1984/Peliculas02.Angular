@@ -57,3 +57,13 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+# Deploy in github
+
+ng build --base-href "https://vmartinez1984.github.io/Peliculas02.Angular/"
+
+install if you dont have intall
+npm install -g angular-cli-ghpages
+
+npx angular-cli-ghpages --dir=dist/peliculas_angular/browser
